@@ -22,7 +22,7 @@ def update_mri(mri_pk, new_data):
 
 def create_mri(data):
     try:
-        cliente = Cliente.objects.get(pk=data["usuario_id"])
+        cliente = Cliente.objects.get(pk=data["cliente"])
         mri = MRI.objects.create(
             cliente=cliente,
             fecha=data["fecha"],
