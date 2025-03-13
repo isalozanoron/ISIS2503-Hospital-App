@@ -78,14 +78,13 @@ WSGI_APPLICATION = 'monitoring.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'basedata_db',
-        'USER': 'basedata_user',
-        'PASSWORD': 'isis2503',
-        'HOST': '10.128.0.2',
-        'PORT': '5432',
+        'NAME': 'name_db',
+        'USER': 'user_db',
+        'PASSWORD': 'user_password',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
