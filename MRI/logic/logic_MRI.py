@@ -6,7 +6,7 @@ def get_mris():
     return mris
 
 def get_mri(user_pk):
-    mri = MRI.objects.filter(usuario_id=user_pk).order_by('-fecha', '-hora').first()
+    mri = MRI.objects.filter(cliente=user_pk).order_by('-fecha', '-hora').first()
     return mri
 
 def update_mri(mri_pk, new_data):
@@ -22,7 +22,7 @@ def update_mri(mri_pk, new_data):
 
 def create_mri(data):
     try:
-        cliente = Cliente.objects.get(pk=data["usuario_id"])
+        cliente = Cliente.objects.get(pk=data["cliente"])
         mri = MRI.objects.create(
             cliente=cliente,
             fecha=data["fecha"],
