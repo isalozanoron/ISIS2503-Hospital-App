@@ -10,7 +10,7 @@ def cliente_list(request):
     context = {
         'cliente_list': clientes
     }
-    return render(request, 'Cliente/cliente.html', context)
+    return render(request, 'cliente/clientes.html', context)
 
 def cliente_create(request):
     if request.method == 'POST':
