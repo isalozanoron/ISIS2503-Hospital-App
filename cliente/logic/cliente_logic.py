@@ -1,7 +1,7 @@
 from ..models import Cliente
 
-def get_cliente():
-    queryset = Cliente.objects.all().order_by('-dateTime')[:10]
+def get_clientes():
+    queryset = Cliente.objects.all()
     return (queryset)
 
 def create_cliente(form):

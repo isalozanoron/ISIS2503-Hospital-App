@@ -1,14 +1,14 @@
 from django.shortcuts import render
-from .forms import ClienteForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .logic.logic_cliente import create_cliente, get_cliente
+from .forms import ClienteForm
+from .logic.cliente_logic import get_clientes, create_cliente
 
 def cliente_list(request):
-    measurements = get_cliente()
+    clientes = get_clientes()
     context = {
-        'measurement_list': measurements
+        'cliente_list': clientes
     }
     return render(request, 'Cliente/cliente.html', context)
 
@@ -17,7 +17,7 @@ def cliente_create(request):
         form = ClienteForm(request.POST)
         if form.is_valid():
             create_cliente(form)
-            messages.add_message(request, messages.SUCCESS, 'cliente create successful')
+            messages.add_message(request, messages.SUCCESS, 'Successfully created cliente')
             return HttpResponseRedirect(reverse('clienteCreate'))
         else:
             print(form.errors)
@@ -27,5 +27,4 @@ def cliente_create(request):
     context = {
         'form': form,
     }
-
     return render(request, 'Cliente/clienteCreate.html', context)

@@ -5,17 +5,8 @@ class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
         fields = [
-            'variable',
-            'value',
-            'unit',
-            'place',
-            #'dateTime',
+            'name',
         ]
-
         labels = {
-            'variable' : 'Variable',
-            'value' : 'Value',
-            'unit' : 'Unit',
-            'place' : 'Place',
-            #'dateTime' : 'Date Time',
+            'name': 'Name',
         }
