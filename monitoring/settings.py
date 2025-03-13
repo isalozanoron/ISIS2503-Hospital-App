@@ -82,7 +82,11 @@ DATABASES = {
         'USER': 'basedata_user',
         'PASSWORD': 'isis2503',
         'HOST': '10.128.0.2',
+<<<<<<< HEAD
         'PORT': '5432',
+=======
+        'PORT': '',
+>>>>>>> 4a970549625a81c95294f92cb723877f56e372ee
     }
 }
 
