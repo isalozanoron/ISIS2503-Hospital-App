@@ -5,17 +5,15 @@ class MRIForm(forms.ModelForm):
     class Meta:
         model = MRI
         fields = [
-            'variable',
-            'value',
-            'unit',
-            'place',
-            #'dateTime',
+            'cliente',
+            'fecha',
+            'hora',
+            'descripcion'
         ]
 
         labels = {
-            'variable' : 'Variable',
-            'value' : 'Value',
-            'unit' : 'Unit',
-            'place' : 'Place',
-            #'dateTime' : 'Date Time',
+            'cliente' : 'Cliente',
+            'fecha' : 'Fecha',
+            'hora' : 'Hora',
+            'descripcion' : 'Descripcion'
         }

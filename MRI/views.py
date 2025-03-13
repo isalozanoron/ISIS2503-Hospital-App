@@ -3,10 +3,10 @@ from .forms import MRIForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .logic.logic_measurement import create_MRI, get_MRI
+from .logic.logic_MRI import create_mri, get_mri
 
 def MRI_list(request):
-    MRI = get_MRI()
+    MRI = get_mri()
     context = {
         'MRI_list': MRI
     }
@@ -16,7 +16,7 @@ def MRI_create(request):
     if request.method == 'POST':
         form = MRIForm(request.POST)
         if form.is_valid():
-            create_MRI(form)
+            create_mri(form)
             messages.add_message(request, messages.SUCCESS, 'MRI create successful')
             return HttpResponseRedirect(reverse('MRICreate'))
         else:
