@@ -27,4 +27,4 @@ def cliente_create(request):
     context = {
         'form': form,
     }
-    return render(request, 'Cliente/clienteCreate.html', context)
+    return render(request, 'cliente/clienteCreate.html', context)
