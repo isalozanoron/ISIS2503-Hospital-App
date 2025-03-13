@@ -37,11 +37,11 @@
 
                         {% for measurement in measurement_list %}
                         <tr>
-                            <td>{{ measurement.variable.name }}</td>
-                            <td>{{ measurement.value }}</td>
-                            <td>{{ measurement.unit }}</td>
-                            <td>{{ measurement.place }}</td>
-                            <td>{{ measurement.dateTime }}</td>
+                            <td>{{ measurement.cliente.name }}</td>
+                            <td>{{ measurement.fecha }}</td>
+                            <td>{{ measurement.hora }}</td>
+                            <td>{{ measurement.descripcion }}</td>
+                            <td>{{ measurement.fecha }}</td>
                         </tr>
                         {% endfor %}
 
