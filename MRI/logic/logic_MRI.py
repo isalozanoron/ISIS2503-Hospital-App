@@ -20,19 +20,10 @@ def update_mri(mri_pk, new_data):
     except MRI.DoesNotExist:
         return None
 
-def create_mri(data):
-    try:
-        cliente_id = data["cliente"]  # Extract the cliente ID from the cleaned data
-        cliente = Cliente.objects.get(pk=cliente_id)
-        mri = MRI.objects.create(
-            cliente=cliente,
-            fecha=data["fecha"],
-            hora=data["hora"],
-            descripcion=data["descripcion"]
-        )
-        return mri
-    except Cliente.DoesNotExist:
-        return None
+def create_mri(form):
+    measurement = form.save()
+    measurement.save()
+    return ()
 
 def map_reduce_usuarios():
     usuarios_ids = MRI.objects.values_list('cliente', flat=True)
