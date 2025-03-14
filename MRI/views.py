@@ -6,12 +6,13 @@ from django.urls import reverse
 from .logic.logic_MRI import create_mri, get_mri
 
 def MRI_list(request):
-    user_pk = request.GET.get('user_pk') 
+    user_pk = request.GET.get('cliente_id') 
     
     if not user_pk:
         return render(request, 'MRI/MRI.html', {'error': 'Es necesario una llave foranea de los clientes'})
 
     MRI = get_mri(user_pk)
+    print(f"Datos de MRI para user_pk {user_pk}: {MRI}")
     
     context = {
         'MRI_list': MRI
