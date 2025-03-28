@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'monitoring.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'basedata_db',
-        'USER': 'basedata_user',
-        'PASSWORD': 'isis2503',
+        'NAME': 'armonia_db',
+        'USER': 'armonia_user',
+        'PASSWORD': 'armonia_gp_3',
         'HOST': '10.128.0.2',
         'PORT': '5432',
     }
