@@ -3,19 +3,12 @@ from .forms import MRIForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .logic.logic_MRI import create_mri, get_mri
+from .logic.logic_MRI import create_mri, get_mris 
 
 def MRI_list(request):
-    user_pk = request.GET.get('cliente_id') 
-    
-    if not user_pk:
-        return render(request, 'MRI/MRI.html', {'error': 'Es necesario una llave foranea de los clientes'})
-
-    MRI = get_mri(user_pk)
-    print(f"Datos de MRI para user_pk {user_pk}: {MRI}")
-    
+    mris = get_mris()  
     context = {
-        'MRI_list': MRI
+        'MRI_list': mris
     }
     return render(request, 'MRI/MRI.html', context)
 
@@ -24,7 +17,7 @@ def MRI_create(request):
         form = MRIForm(request.POST)
         if form.is_valid():
             create_mri(form)
-            messages.add_message(request, messages.SUCCESS, 'MRI create successful')
+            messages.add_message(request, messages.SUCCESS, 'MRI creado exitosamente')
             return HttpResponseRedirect(reverse('MRICreate'))
         else:
             print(form.errors)
